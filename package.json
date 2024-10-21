@@ -10,15 +10,14 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.4",
-    "next": "14.2.13",
+    "next": "14.2.15",
     "react": "^18",
-    "react-bootstrap": "^2.10.4",
-    "react-chartjs-2": "^5.2.0",
+    "react-bootstrap": "^2.10.5",
+    "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "eslint-config-next": "14.2.15"
   }
 }

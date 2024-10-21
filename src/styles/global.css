@@ -1,3 +1,7 @@
-.sidebar-min-vh {
-    min-height: calc(100vh - 72px);
+body {
+    background-color: rgba(248, 249, 250, 1);
+}
+
+.remove-dropdown-toggle>.dropdown-toggle::before {
+    display: none !important;
 }

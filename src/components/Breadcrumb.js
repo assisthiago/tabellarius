@@ -1,14 +1,17 @@
-import { Breadcrumb as BreadcrumbRB } from "react-bootstrap";
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
-export default function Breadcrumb() {
+export default function Breadcrumbs({ items = [] }) {
     return (
-        <BreadcrumbRB>
-            {/* <BreadcrumbRB.Item href="#">Dashboard</BreadcrumbRB.Item>
-            <BreadcrumbRB.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-                Library
-            </BreadcrumbRB.Item> */}
-            <BreadcrumbRB.Item active>Dashboard</BreadcrumbRB.Item>
-        </BreadcrumbRB>
-    )
+        <Breadcrumb>
+            {items.map((item, index) => (
+                <Breadcrumb.Item
+                    href={item.url}
+                    key={index}
+                    active={item.active}
+                >
+                    {item.title}
+                </Breadcrumb.Item>
+            ))}
+        </Breadcrumb>
+    );
 }
-

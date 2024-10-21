@@ -1,118 +1,81 @@
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/styles/global.css';
 
-import Layout from "@/components/Layout"
-import { Bar, Line } from 'react-chartjs-2';
-import { Card, Col, Row } from 'react-bootstrap';
-
-const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-        {
-            label: 'Sales',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1,
-        },
-    ],
-};
-
-const data1 = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-        {
-            label: 'Dataset 1',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-        },
-        {
-            label: 'Dataset 2',
-            data: [45, 29, 60, 51, 36, 25, 10],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-        },
-    ],
-};
-
-const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top',
-        },
-        title: {
-            display: true,
-            text: 'Monthly Sales',
-        },
-    },
-};
-
-const options1 = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top',
-        },
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-}
+import Breadcrumb from "@/components/Breadcrumb";
+import Layout from "@/components/Layout";
+import { Card, Col, Row, Stack } from 'react-bootstrap';
+import { BarChartFill, SendCheck, SendExclamation, SendPlus, SendX } from 'react-bootstrap-icons';
 
 export default function Home() {
+    const breadcrumbs = [{ title: "Dashboard", url: "/", active: true }];
+
     return (
         <Layout>
+            <Breadcrumb items={breadcrumbs} />
+
             <Row className="mb-3">
-                <Col>
-                    <Card className="shadow">
+                <Col sm={5}>
+                    <Row>
+                        <Col sm={6} className="mb-4">
+                            <Card className="border-0 rounded-0 shadow">
+                                <Card.Body>
+                                    <Stack direction="horizontal" className="justify-content-between">
+                                        <Card.Subtitle>Enviados</Card.Subtitle>
+                                        <SendCheck color="green" size={24} />
+                                    </Stack>
+                                    <Card.Title>99 999 999</Card.Title>
+                                    <Card.Text>Enviados de primeira ou na segunda tentativa.</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col sm={6} className="mb-4">
+                            <Card className="border-0 rounded-0 shadow">
+                                <Card.Body>
+                                    <Stack direction="horizontal" className="justify-content-between">
+                                        <Card.Subtitle>Falhados</Card.Subtitle>
+                                        <SendX color="red" size={24} />
+                                    </Stack>
+                                    <Card.Title>99 999 999</Card.Title>
+                                    <Card.Text>Falharam em todas as tentativas.</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col sm={6}>
+                            <Card className="border-0 rounded-0 shadow">
+                                <Card.Body>
+                                    <Stack direction="horizontal" className="justify-content-between">
+                                        <Card.Subtitle>Na fila</Card.Subtitle>
+                                        <SendPlus color="orange" size={24} />
+                                    </Stack>
+                                    <Card.Title>99 999 999</Card.Title>
+                                    <Card.Text>Aguardando para serem enviados.</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col sm={6}>
+                            <Card className="border-0 rounded-0 shadow">
+                                <Card.Body>
+                                    <Stack direction="horizontal" className="justify-content-between">
+                                        <Card.Subtitle>TPS</Card.Subtitle>
+                                        <SendExclamation color="blue" size={24} />
+                                    </Stack>
+                                    <Card.Title>9999/s</Card.Title>
+                                    <Card.Text>Throughput Per Second (Envios por segundo).</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col sm={7}>
+                    <Card className="border-0 rounded-0 shadow h-100">
                         <Card.Body>
-                            <Card.Text className="m-0">
-                                <small>Numbers</small>
-                            </Card.Text>
-                            <Card.Title className="m-0">10000</Card.Title>
+                            <Stack direction="horizontal" className="justify-content-between">
+                                <Card.Subtitle>Gráficos</Card.Subtitle>
+                                <BarChartFill size={24} />
+                            </Stack>
+                            <Card.Text>Gráfico de envios do dia.</Card.Text>
                         </Card.Body>
                     </Card>
-                </Col>
-                <Col>
-                    <Card className="shadow">
-                        <Card.Body>
-                            <Card.Text className="m-0">
-                                <small>Numbers</small>
-                            </Card.Text>
-                            <Card.Title className="m-0">10000</Card.Title>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className="shadow">
-                        <Card.Body>
-                            <Card.Text className="m-0">
-                                <small>Numbers</small>
-                            </Card.Text>
-                            <Card.Title className="m-0">10000</Card.Title>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className="shadow">
-                        <Card.Body>
-                            <Card.Text className="m-0">
-                                <small>Numbers</small>
-                            </Card.Text>
-                            <Card.Title className="m-0">10000</Card.Title>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Bar data={data} options={options} />
-                </Col>
-                <Col>
-                    <Line data={data1} options={options1} />
                 </Col>
             </Row>
         </Layout>

@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 import { Card, Col, Row, Stack } from 'react-bootstrap';
 import { BarChartFill, SendCheck, SendExclamation, SendPlus, SendX } from 'react-bootstrap-icons';
 
-export default function Home() {
+export default function Dashboard() {
     const breadcrumbs = [{ title: "Dashboard", url: "/", active: true }];
 
     return (

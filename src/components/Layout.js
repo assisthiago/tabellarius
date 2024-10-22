@@ -1,4 +1,6 @@
-import { Container, Row } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Container } from "react-bootstrap";
 import Navigator from "./Navigator";
 
 export default function Layout({ children }) {

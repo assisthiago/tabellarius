@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styles/global.css';
-
 import Breadcrumb from "@/components/Breadcrumb";
 import Layout from "@/components/Layout";
 import { Card, Col, Row, Stack } from 'react-bootstrap';

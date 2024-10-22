@@ -21,7 +21,7 @@ export default function Navigator() {
                     <Navbar.Brand>
                         <Button
                             variant="outline-light"
-                            className="me-3"
+                            className="border-0 rounded-0 me-3"
                             onClick={handleShowSidebar}
                         >
                             <List color="black" size={20} />
@@ -35,18 +35,18 @@ export default function Navigator() {
                             aria-label="Search"
                             className="me-2"
                         />
-                        <Button variant="outline-light">
+                        <Button variant="border-0 rounded-0 outline-light">
                             <Search color="black" />
                         </Button>
                     </Form>
                     <Nav>
                         <Nav.Item>
-                            <Button variant="outline-light" onClick={handleShowNotifications}>
+                            <Button variant="border-0 rounded-0 outline-light" onClick={handleShowNotifications}>
                                 <BellFill color="black" />
                             </Button>
                         </Nav.Item>
                         <Nav.Item className="ms-3">
-                            <Button variant="outline-light">
+                            <Button variant="border-0 rounded-0 outline-light">
                                 <DoorClosedFill color="black" />
                             </Button>
                         </Nav.Item>
